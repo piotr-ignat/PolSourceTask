@@ -1,0 +1,34 @@
+<div class="table">
+
+  <div class="table__head">
+      <div class="table__taskName" (click)="onSort('taskName')">Task Name <fa-icon *ngIf="nameAscend !== undefined" [icon]="nameAscend ? faSortUp : faSortDown"></fa-icon></div>
+      <div class="table__priority" (click)="onSort('priority')">Priority <fa-icon *ngIf="priorityAscend !== undefined" [icon]="priorityAscend ? faSortUp : faSortDown"></fa-icon></div>
+      <div class="table__done" (click)="onSort('done')">Done <fa-icon *ngIf="doneAscend !== undefined" [icon]="doneAscend ? faSortUp : faSortDown"></fa-icon></div>
+  </div>
+
+  <div class="table__body">
+    <task *ngFor="let task of taskDisplayed" [task]="task" (deleteTask)="onDeleteTask($event)" (isChecked)="onCheck($event)"></task>
+  </div>
+
+  <div *ngIf="!addMode" class="table__footer">
+    <div class="table__add">
+      <fa-icon [icon]="faPlusCircle" (click)="onAdd()" size="lg" [styles]="{'stroke': 'green', 'color': 'green'}"></fa-icon>
+    </div>
+    <div class="table__rowsCount">Rows per page:
+      <select id="count" class="form-control" name="count" (change)="onCountChange()" #rowsCount>
+        <option value="5" selected>5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+      </select>
+    </div>
+    <div class="table__pages">
+      <span>{{tasks.length === 0 ? start : start + 1}} - {{end}} of {{tasks.length}}</span>
+    </div>
+    <div class="table__pageButtons">
+      <button [disabled]="page === 1" (click)="onPrevPage()"><fa-icon [icon]="faAngleLeft" size="lg"></fa-icon></button>
+      <button [disabled]="page === pages" (click)="onNextPage()"><fa-icon [icon]="faAngleRight" size="lg"></fa-icon></button>
+    </div>
+  </div>
+
+  <add-form *ngIf="addMode" (newTask)="onAddNewTask($event)" (closeForm)="onCloseForm()"></add-form>
+</div>

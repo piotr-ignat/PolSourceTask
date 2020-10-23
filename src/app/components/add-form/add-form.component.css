@@ -1,0 +1,31 @@
+.table__addForm form {
+  position: relative;
+  display: flex;
+  border: 2px solid #e5e5e5;
+  border-top: none;
+  padding: 13px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group {
+  margin: 0;
+}
+
+.form-group fa-icon {
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.table__addForm button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: default;
+  outline: none;
+}
+
+.table__addForm button[disabled] fa-icon {
+  opacity: .5;
+  cursor: default;
+}

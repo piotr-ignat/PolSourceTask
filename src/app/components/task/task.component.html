@@ -1,0 +1,13 @@
+<div class="table__row">
+  <div class="table__taskName">{{task?.taskName}}</div>
+  <div class="table__priority">{{task?.priority | priority}}</div>
+  <div class="table__done">
+    <label class="table__checkbox">
+      <input type="checkbox" [checked]="task?.done" (click)="onCheck(task, done)" #done>
+      <span class="checkmark"></span>
+    </label>
+  </div>
+  <div class="table__remove" (click)="onDelete(task)">
+    <fa-icon [icon]="faTrashAlt"></fa-icon>
+  </div>
+</div>

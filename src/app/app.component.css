@@ -1,0 +1,114 @@
+/* GENERAL RULES */
+
+.table {
+  font-family: sans-serif;
+  max-width: 912px;
+  margin: auto;
+  border: 10px solid #eeeeee;
+}
+
+.table__head {
+  background-color: #494430;
+  color: white;
+  display: flex;
+  padding: 20px;
+  border: 2px solid #e5e5e5;
+  border-bottom: none;
+}
+
+.table__head .table__taskName,
+.table__head .table__priority,
+.table__head .table__done {
+  cursor: pointer;
+}
+
+.table__taskName {
+  width: 60%;
+}
+
+.table__priority {
+  width: 20%;
+}
+.table__head .table__done {
+  width: 20%;
+}
+
+.table__footer{
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid #e5e5e5;
+  border-top: none;
+}
+
+/* FOOTER RULES */
+
+.table__add {
+  width: 10%;
+}
+
+.table__rowsCount {
+  width: 55%;
+  justify-content: flex-end;
+}
+
+.table__pages{
+  width: 25%;
+  text-align: center;
+}
+
+.table__pageButtons {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.table__add fa-icon{
+  cursor: pointer;
+}
+
+svg {
+  width: 25px;
+  height: 25px;
+  stroke-width: 25px;
+}
+
+.table__rowsCount {
+  display: flex;
+  align-items: center;
+}
+
+.table__rowsCount select {
+  width: 75px;
+  border: none;
+  height: 100%;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.table__pageButtons {
+  display: flex;
+}
+
+.table__pageButtons button:first-of-type{
+  margin-right: 20px;
+}
+
+.table__pageButtons fa-icon {
+  cursor: pointer;
+}
+
+.table__pageButtons button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: default;
+  outline: none;
+  width: min-content;
+}
+
+.table__pageButtons button[disabled] fa-icon {
+  opacity: .5;
+  cursor: default;
+}

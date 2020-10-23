@@ -1,0 +1,18 @@
+<div  class="table__addForm">
+  <form (ngSubmit)="onSubmitForm(form)" #form="ngForm">
+    <div class="form-group">
+      <input type="text" id="taskName" class="form-control" name="taskName" placeholder="Task Name" ngModel required>
+    </div>
+    <div class="form-group">
+      <select id="priority" class="form-control" name="priority" ngModel required>
+        <option value="1" selected>low</option>
+        <option value="2">medium</option>
+        <option value="3">high</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button type="submit" [disabled]="!form.valid"><fa-icon [icon]="faCheckCircle" size="lg" [styles]="{'stroke': 'green', 'color': 'green'}"></fa-icon></button>
+      <fa-icon [icon]="faTimesCircle" size="lg" [styles]="{'stroke': 'red', 'color': 'red'}" (click)="onCloseForm()"></fa-icon>
+    </div>
+  </form>
+</div>
